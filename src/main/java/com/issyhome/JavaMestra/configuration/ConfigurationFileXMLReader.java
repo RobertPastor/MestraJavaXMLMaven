@@ -69,7 +69,7 @@ public class ConfigurationFileXMLReader extends ConfigurationFileBaseReader {
 				//Affiche l'encodage
 				logger.info( "xml encoding = " + document.getXmlEncoding());	
 
-				//Affiche s'il s'agit d'un document standalone		
+				//Affiche s'il s'agit d'un document stand-alone		
 				logger.info( "is stand alone: "  + document.getXmlStandalone());
 				logger.info( "======================");
 

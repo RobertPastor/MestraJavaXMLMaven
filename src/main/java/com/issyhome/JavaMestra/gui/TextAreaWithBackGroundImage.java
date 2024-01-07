@@ -21,7 +21,7 @@ public class TextAreaWithBackGroundImage extends JTextArea {
 		super(rows, columns);
 		try {
 			// default background  image is SSS
-			java.net.URL imageURL = TextAreaWithBackGroundImage.class.getResource("SSS.png");
+			java.net.URL imageURL = TextAreaWithBackGroundImage.class.getResource("/images/SSS.png");
 			image = ImageIO.read(imageURL);
 		} catch (IOException ex) {
 			ex.printStackTrace();

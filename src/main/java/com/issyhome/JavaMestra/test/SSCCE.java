@@ -15,6 +15,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 public class SSCCE extends JPanel
 {
+	private static final long serialVersionUID = -4934751223075579155L;
+
 	public SSCCE() 	{
 		setLayout( new BorderLayout() );
 

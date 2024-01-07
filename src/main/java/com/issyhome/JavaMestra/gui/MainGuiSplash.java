@@ -111,7 +111,7 @@ public class MainGuiSplash {
 	public static void main(String[] args) {
 
 		// The image to be displayed in the splash screen 	
-		String imgName = "../clouds.jpg";
+		String imgName = "/images/clouds.jpg";
 
 		//display of the splash screen
 		splashWindow  = new SplashWindow(imgName,MaxProgressBarValue); 

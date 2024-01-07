@@ -9,7 +9,8 @@ import java.awt.event.*;
  
 public class HtmlDemo extends JPanel
                       implements ActionListener {
-    JLabel theLabel;
+    private static final long serialVersionUID = 3552302557069653705L;
+	JLabel theLabel;
     JTextArea htmlTextArea;
  
     public HtmlDemo() {

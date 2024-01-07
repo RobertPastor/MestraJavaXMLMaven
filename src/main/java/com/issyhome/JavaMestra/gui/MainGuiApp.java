@@ -153,7 +153,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 			//=============================================
 			// add the configuration tab to the TABBED panel
 			//=============================================
-			tabbedPane.addTab("<html><center>XML<br>Configuration</center></html>", createImageIcon("xml.png"), configurationTabXML, "Manage Configuration file");
+			tabbedPane.addTab("<html><center>XML<br>Configuration</center></html>", createImageIcon("/images/xml.png"), configurationTabXML, "Manage Configuration file");
 			
 			//
 			// add the XML Configuration HELP tab
@@ -163,7 +163,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 			configurationHelpTab.setBackground(Color.yellow);
 			configurationHelpTab.setOpaque(true);
 			
-			tabbedPane.addTab("<html><center>Configuration<br>Help</center></html>", createImageIcon("question-mark.png"), configurationHelpTab, "help");
+			tabbedPane.addTab("<html><center>Configuration<br>Help</center></html>", createImageIcon("/images/question-mark.png"), configurationHelpTab, "help");
 
 			//=============================================
 			// add the Mestra Checks tab to the TABBED panel
@@ -172,7 +172,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 			this.mestraChecksTab = new MestraChecksTab(this);
 			this.mestraChecksTab.setOpaque(true); //content panes must be opaque
 
-			tabbedPane.addTab("<html><center>Mestra<br>Checks</center></html>", createImageIcon("checks.png"), mestraChecksTab, "Analyse one MESTRA file");
+			tabbedPane.addTab("<html><center>Mestra<br>Checks</center></html>", createImageIcon("/images/checks.png"), mestraChecksTab, "Analyse one MESTRA file");
 			
 			/**============================================
 			 * add the Help Tab
@@ -181,7 +181,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 			mestraChecksHelpTab.setBackground(Color.yellow);
 			mestraChecksHelpTab.setOpaque(true);
 			
-			tabbedPane.addTab("<html><center>Mestra<br>Checks<br>Help</center></html>", createImageIcon("question-mark.png"), mestraChecksHelpTab, "help");
+			tabbedPane.addTab("<html><center>Mestra<br>Checks<br>Help</center></html>", createImageIcon("/images/question-mark.png"), mestraChecksHelpTab, "help");
 			
 			//=============================================
 			// add the trace-ability tab to the TABBED panel
@@ -189,7 +189,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 			this.traceabilityTab = new TraceabilityTab(this);
 			this.traceabilityTab.setOpaque(true); //content panes must be opaque
 
-			tabbedPane.addTab("<html><center>Traceability<br>Checks</center></html>", createImageIcon("cycle.png"), traceabilityTab, "Run Traceability");
+			tabbedPane.addTab("<html><center>Traceability<br>Checks</center></html>", createImageIcon("/images/cycle.png"), traceabilityTab, "Run Traceability");
 			//tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 			
 			/**============================================
@@ -199,7 +199,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 			mestraChecksHelpTab.setBackground(Color.yellow);
 			traceabilityHelpTab.setOpaque(true);
 			
-			tabbedPane.addTab("<html><center>Traceability<br>Help</center></html>", createImageIcon("question-mark.png"), traceabilityHelpTab, "help");
+			tabbedPane.addTab("<html><center>Traceability<br>Help</center></html>", createImageIcon("images/question-mark.png"), traceabilityHelpTab, "help");
 
 
 		} else {
@@ -251,7 +251,6 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 
 
 	/**
-	 *      
 	 *  Returns an ImageIcon, or null if the path was invalid. 
 	 */
 	protected  ImageIcon createImageIcon(String path) {

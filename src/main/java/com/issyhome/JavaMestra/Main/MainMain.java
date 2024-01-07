@@ -1,4 +1,4 @@
-package com.issyhome.JavaMestra.applet;
+package com.issyhome.JavaMestra.Main;
 
 import java.awt.BorderLayout;
 import java.awt.Container;

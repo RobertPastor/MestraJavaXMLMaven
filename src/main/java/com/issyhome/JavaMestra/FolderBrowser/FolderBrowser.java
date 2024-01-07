@@ -59,7 +59,7 @@ public class FolderBrowser implements FolderBrowserInterface {
      */
     private File [] searchFileFolder (String[] fileExtensions, boolean recursiveSearch) throws IllegalArgumentException   {
         File file = new File (this.folderPath);
-        logger.info( file.getAbsolutePath() );
+        //logger.info( file.getAbsolutePath() );
 
         /*
          * if the folder does not exists
@@ -94,7 +94,7 @@ public class FolderBrowser implements FolderBrowserInterface {
             String[] fileExtensions,
             boolean recursiveSearch) {
     	
-        logger.info( folderPath.getAbsolutePath() );
+        //logger.info( folderPath.getAbsolutePath() );
         /*
          * search sub folders 
          * and files with the expected extension
@@ -102,7 +102,7 @@ public class FolderBrowser implements FolderBrowserInterface {
         File [] filePath = folderPath.listFiles();
         for (int i = 0; i < filePath.length; i++) {
             // if the path is a folder
-            logger.info( "Current file/folder: "+ filePath[i].getAbsolutePath());
+            //logger.info( "Current file/folder: "+ filePath[i].getAbsolutePath());
 
             if (filePath[i].isDirectory() && (recursiveSearch == true))
                 // Recursiv search of files from this folder

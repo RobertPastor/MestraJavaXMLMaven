@@ -21,6 +21,7 @@ import com.issyhome.JavaMestra.tableView.TableView;
 
 public class CustomTableView extends TableView {
 
+	private static final long serialVersionUID = -6356362984916277565L;
 	BufferedImage image = null;
 
 	public CustomTableView(DefaultTableViewModel model) {
@@ -28,8 +29,8 @@ public class CustomTableView extends TableView {
 		super(model);
 		this.setOpaque(false);
 		try {
-			// default background  image is SSS
-			java.net.URL imageURL = CustomTableView.class.getResource("SSS.png");
+			// default background image is SSS
+			java.net.URL imageURL = CustomTableView.class.getResource("/images/SSS.png");
 			this.image = ImageIO.read(imageURL);
 			//System.out.println("image found !!!");
 		} catch (IOException ex) {
@@ -96,25 +97,25 @@ public class CustomTableView extends TableView {
 
 	public void notifyChanges(MestraFileTypeEnum mestraFileTypeEnum) {
 
-		String resource = "SSS.png";
+		String resource = "/images/SSS.png";
 		switch (mestraFileTypeEnum) {
 		case SSS:
-			resource = "SSS.png";
+			resource = "/images/SSS.png";
 			break;
 		case SRS:
-			resource = "SRS.png";
+			resource = "/images/SRS.png";
 			break;
 		case TS:
-			resource = "TS.png";
+			resource = "/images/TS.png";
 			break;
 		case SDD:
-			resource = "SDD.png";
+			resource = "/images/SDD.png";
 			break;
 		case MF:
-			resource = "MF.png";
+			resource = "/images/MF.png";
 			break;
 		default:
-			resource = "SSS.png";
+			resource = "/images/SSS.png";
 			break;
 		}
 		try {

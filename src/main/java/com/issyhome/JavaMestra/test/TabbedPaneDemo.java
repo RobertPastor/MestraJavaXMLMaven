@@ -52,7 +52,9 @@ import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
  
 public class TabbedPaneDemo extends JPanel {
-    public TabbedPaneDemo() {
+    private static final long serialVersionUID = 2500125200282594914L;
+
+	public TabbedPaneDemo() {
         super(new GridLayout(1, 1));
          
         JTabbedPane tabbedPane = new JTabbedPane();

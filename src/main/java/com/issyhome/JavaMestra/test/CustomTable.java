@@ -1,7 +1,6 @@
 package com.issyhome.JavaMestra.test;
 
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -16,7 +15,7 @@ import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
 public class CustomTable extends JTable {
-	
+
 	BufferedImage image = null;
 
 	public CustomTable(int rows, int columns) {
@@ -59,28 +58,28 @@ public class CustomTable extends JTable {
 
 
 
-private static void createAndShowGUI() {
-	JPanel panel = new JPanel();
+	private static void createAndShowGUI() {
+		JPanel panel = new JPanel();
 
-	final JScrollPane sp = new JScrollPane(new CustomTable(10, 5));
-	
-	JFrame frame = new JFrame("SSCCE");
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.add(sp);
-	frame.setLocationByPlatform( true );
-	frame.pack();
-	frame.setVisible( true );
-}
+		final JScrollPane sp = new JScrollPane(new CustomTable(10, 5));
 
-public static void main(String[] args) 	{
-	EventQueue.invokeLater(new Runnable()
-	{
-		public void run()
+		JFrame frame = new JFrame("SSCCE");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(sp);
+		frame.setLocationByPlatform( true );
+		frame.pack();
+		frame.setVisible( true );
+	}
+
+	public static void main(String[] args) 	{
+		EventQueue.invokeLater(new Runnable()
 		{
-			createAndShowGUI();
-		}
-	});
-}
+			public void run()
+			{
+				createAndShowGUI();
+			}
+		});
+	}
 
 
 }

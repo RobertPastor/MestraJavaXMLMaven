@@ -39,19 +39,19 @@ public class TestSpacesRemover
 	}
 
 
-public static void main(String[] args){
-	String oldStr =
-		">     <0-1-2-3-4-5-6-7-8-9-----0-1-2-3-4-5-6-7-8-9>   <";
-	System.out.println(oldStr);
-	String newStr = oldStr.replaceAll("-", " ");
-	System.out.println(newStr);
-	System.out.println(ltrim(newStr));
-	System.out.println(rtrim(newStr));
-	System.out.println(itrim(newStr));
-	System.out.println(lrtrim(newStr));
-	System.out.println(spaceRemover(newStr));
-	
-}
+	public static void main(String[] args){
+		String oldStr =
+				">     <0-1-2-3-4-5-6-7-8-9-----0-1-2-3-4-5-6-7-8-9>   <";
+		System.out.println(oldStr);
+		String newStr = oldStr.replaceAll("-", " ");
+		System.out.println(newStr);
+		System.out.println(ltrim(newStr));
+		System.out.println(rtrim(newStr));
+		System.out.println(itrim(newStr));
+		System.out.println(lrtrim(newStr));
+		System.out.println(spaceRemover(newStr));
+
+	}
 
 
 }
