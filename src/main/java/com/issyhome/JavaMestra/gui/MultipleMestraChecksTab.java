@@ -62,7 +62,7 @@ public class MultipleMestraChecksTab extends JPanel implements ActionListener {
 		}
 	}
 
-	private void writeDebugMessage (String str) {
+	public void writeDebugMessage (String str) {
 		if (mainGuiApp != null) {
 			mainGuiApp.writeDebugMessage(str);
 		}

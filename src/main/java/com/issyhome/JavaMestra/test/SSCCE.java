@@ -33,6 +33,7 @@ public class SSCCE extends JPanel
 		JPanel background = new JPanel( new BorderLayout() )
 		{
 
+			private static final long serialVersionUID = 6008729972172186416L;
 			BufferedImage image = null;
 			protected void getImage() {
 				try {
@@ -57,7 +58,7 @@ public class SSCCE extends JPanel
 	}
 
 	private static void createAndShowGUI() {
-		JPanel panel = new JPanel();
+		//JPanel panel = new JPanel();
 
 		JFrame frame = new JFrame("SSCCE");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

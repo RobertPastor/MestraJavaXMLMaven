@@ -9,13 +9,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
 public class CustomTable extends JTable {
 
+	private static final long serialVersionUID = 2095434764133131557L;
 	BufferedImage image = null;
 
 	public CustomTable(int rows, int columns) {
@@ -59,7 +59,7 @@ public class CustomTable extends JTable {
 
 
 	private static void createAndShowGUI() {
-		JPanel panel = new JPanel();
+		//JPanel panel = new JPanel();
 
 		final JScrollPane sp = new JScrollPane(new CustomTable(10, 5));
 

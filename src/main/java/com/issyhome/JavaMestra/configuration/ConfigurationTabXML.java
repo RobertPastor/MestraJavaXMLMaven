@@ -161,7 +161,7 @@ public class ConfigurationTabXML extends JPanel implements ActionListener {
 		catch (InterruptedException e) {}
 	}*/
 	
-	private StatusBar getStatusBar () {
+	public StatusBar getStatusBar () {
 		if (this.mainGuiApp != null) {
 			return this.mainGuiApp.getStatusBar();    		
 		}

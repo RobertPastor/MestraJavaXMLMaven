@@ -19,7 +19,7 @@ public class LongCellRenderer extends DefaultTableCellRenderer {
 	public void setValue(Object value) {
 		if (value != null) {
 			if (value instanceof Long) {
-				Long l = new Long((Long)value);
+				Long l = Long.valueOf((Long)value);
 				if (l == 0) {
 					this.setText("--");
 				}

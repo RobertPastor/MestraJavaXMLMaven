@@ -3,7 +3,6 @@ package com.issyhome.JavaMestra.tableView;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -16,7 +15,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,7 +61,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.sun.org.apache.xpath.internal.XPathAPI;
+//import com.sun.org.apache.xpath.internal.XPathAPI;
+import org.apache.xpath.CachedXPathAPI;
 
 /**
  * The table view main class
@@ -198,7 +197,7 @@ public class TableView extends JTable {
             Document doc = builder.parse(mFileName);
             String xpath = "/xml/body/*";
             try {
-                NodeList nodelist = XPathAPI.selectNodeList(doc, xpath);
+                NodeList nodelist = new CachedXPathAPI().selectNodeList(doc, xpath);
                 // Process the elements in the node list
                 for (int i = 0; i < nodelist.getLength(); i++) {
                     // Get element
@@ -248,7 +247,7 @@ public class TableView extends JTable {
                             TableColumn tableColumn = getColumnModel().getColumn(j);
                             if (tableColumn.getHeaderValue().toString().compareTo(elem.getAttribute("id")) == 0) {
                                 if (elem.getAttribute("width").length() > 0) {
-                                    tableColumn.setPreferredWidth(new Integer(elem.getAttribute("width")).intValue());
+                                    tableColumn.setPreferredWidth( Integer.valueOf(elem.getAttribute("width")).intValue());
                                 }
                             }
                         }
@@ -343,7 +342,7 @@ public class TableView extends JTable {
                 for (int j = 0; j < getColumnCount(); j++) {
                     TableColumn tableColumn = getColumnModel().getColumn(j);
                     if (tableColumn.getHeaderValue().toString().compareTo(column.getName()) == 0) {
-                        e.setAttribute("width", new Integer(tableColumn.getWidth()).toString());
+                        e.setAttribute("width",  Integer.valueOf(tableColumn.getWidth()).toString());
                         break;
                     }
                 }
@@ -1031,7 +1030,7 @@ public class TableView extends JTable {
          */
         public void keyTyped(KeyEvent pEvent) {
             char key = pEvent.getKeyChar();
-            String strKey = TableViewAdapter.removeSpecialCharacter(new Character(key).toString());
+            String strKey = TableViewAdapter.removeSpecialCharacter( Character.valueOf(key).toString());
             if (System.currentTimeMillis() - mPreviousTime < RESET_TIME) {
                 mTextToFind = mTextToFind + strKey;
             }

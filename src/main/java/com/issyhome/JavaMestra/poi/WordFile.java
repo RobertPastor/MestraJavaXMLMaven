@@ -21,7 +21,6 @@ import org.apache.poi.xwpf.usermodel.XWPFStyles;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTStyle;
 
 import com.issyhome.JavaMestra.configuration.MestraStyle;
 import com.issyhome.JavaMestra.configuration.MestraStylesMap;
@@ -252,7 +251,7 @@ public class WordFile {
 	 */
 	private static String convertDash173toDash45(String source) {
 
-		String char173 = new Character((char)8211).toString();
+		String char173 = Character.valueOf((char)8211).toString();
 		StringTokenizer st = new StringTokenizer(source,char173,false);
 		String t="";
 		while (st.hasMoreElements()) {
@@ -260,7 +259,7 @@ public class WordFile {
 				t = t + st.nextElement();
 			}
 			else {
-				t = t + new Character((char)45).toString() + st.nextElement();
+				t = t +  Character.valueOf((char)45).toString() + st.nextElement();
 			}
 		}
 		return t;

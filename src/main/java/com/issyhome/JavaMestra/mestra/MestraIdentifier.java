@@ -70,7 +70,7 @@ public class MestraIdentifier extends ErrorWarning implements Cloneable {
 
 	private static String convertDash173toDash45(String source) {
 
-		String char173 = new Character((char)173).toString();
+		String char173 =  Character.valueOf((char)173).toString();
 		StringTokenizer st = new StringTokenizer(source,char173,false);
 		String t="";
 		while (st.hasMoreElements()) {
@@ -78,7 +78,7 @@ public class MestraIdentifier extends ErrorWarning implements Cloneable {
 				t = t + st.nextElement();
 			}
 			else {
-				t = t + new Character((char)45).toString() + st.nextElement();
+				t = t +  Character.valueOf((char)45).toString() + st.nextElement();
 			}
 		}
 		return t;

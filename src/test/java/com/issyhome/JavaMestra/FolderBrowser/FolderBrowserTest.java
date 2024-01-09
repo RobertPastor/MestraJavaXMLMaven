@@ -23,6 +23,7 @@ public class FolderBrowserTest {
 		String[] fileExtensions = { "*.jar" };
 		int count = 0;
 		for (File file : folderBrowser.GetFilesInFolder( fileExtensions , true)) {
+			logger.info(file.getAbsolutePath());
 			count = count + 1;
 		}
 		logger.info("File count = " + count);

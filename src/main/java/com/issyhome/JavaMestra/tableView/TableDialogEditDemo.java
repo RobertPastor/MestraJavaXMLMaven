@@ -54,10 +54,10 @@ public class TableDialogEditDemo extends JPanel {
         ColoredTableCellRenderer coloredTableCellRenderer = new ColoredTableCellRenderer();
         private Object[][] data = {
             {"Mary", coloredTableCellRenderer.new ColorData(Color.RED,"Robert"),
-             "Snowboarding", new Integer(5), new Boolean(false)},
+             "Snowboarding", (5), (false)},
              
              {"Mary & Robert", coloredTableCellRenderer.new ColorData(Color.YELLOW,"Mary"),
-                 "Snowboarding", new Integer(5), new Boolean(false)}
+                 "Snowboarding", (5), (false)}
         };
 
         public int getColumnCount() {

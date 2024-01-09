@@ -38,7 +38,8 @@ public class HtmlDemo extends JPanel
         changeTheLabel.addActionListener(this);
  
         theLabel = new JLabel(initialText) {
-            public Dimension getPreferredSize() {
+            private static final long serialVersionUID = 8286455037098018463L;
+			public Dimension getPreferredSize() {
                 return new Dimension(200, 200);
             }
             public Dimension getMinimumSize() {

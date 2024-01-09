@@ -34,7 +34,7 @@ public class MestraStyle {
 
 		this.attributesMap = new TreeMap<String, Boolean>();
 		for (String mestraAttribute : mestraAttributes) {
-			this.attributesMap.put(mestraAttribute, new Boolean(false));
+			this.attributesMap.put(mestraAttribute, (false));
 		}
 		this.order = 0;
 	}
@@ -55,7 +55,7 @@ public class MestraStyle {
 		for (Map.Entry<String, Boolean> entry : aMestraStyle.attributesMap.entrySet()) {
 			String key = entry.getKey();
 			boolean value = entry.getValue();
-			this.attributesMap.put(key, new Boolean(value));
+			this.attributesMap.put(key, (value));
 		}
 		this.order = aMestraStyle.order;
 	}
@@ -75,7 +75,7 @@ public class MestraStyle {
 
 		this.attributesMap = new TreeMap<String, Boolean>();
 		for (String mestraAttribute : mestraAttributes) {
-			this.attributesMap.put(mestraAttribute, new Boolean(false));
+			this.attributesMap.put(mestraAttribute, (false));
 		}
 		this.order = 0;
 	}
@@ -99,7 +99,7 @@ public class MestraStyle {
 
 		this.attributesMap = new TreeMap<String, Boolean>();
 		for (String mestraAttribute : mestraAttributes) {
-			this.attributesMap.put(mestraAttribute, new Boolean(false));
+			this.attributesMap.put(mestraAttribute, (false));
 		}
 		this.order = 0;
 	}
@@ -121,7 +121,7 @@ public class MestraStyle {
 		for (Map.Entry<String, Boolean> entry : _attributesMap.entrySet()) {
 			String key = entry.getKey();
 			boolean value = entry.getValue();
-			this.attributesMap.put(key, new Boolean(value));
+			this.attributesMap.put(key, (value));
 		}
 		this.order = order;
 	}

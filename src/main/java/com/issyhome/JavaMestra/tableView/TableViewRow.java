@@ -29,7 +29,7 @@ public class TableViewRow {
 		public Row(String pName, String pDescription, int pNumber, String pData, Date pCreate) {
 			mName = pName;
 			mDescription = pDescription;
-			mNumber = new Integer(pNumber);
+			mNumber =  Integer.valueOf(pNumber);
 			mData = pData;
 			mCreate = pCreate;
 		}

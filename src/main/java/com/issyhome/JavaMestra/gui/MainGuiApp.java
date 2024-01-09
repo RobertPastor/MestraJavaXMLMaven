@@ -61,7 +61,6 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 		return this.cellStyles;
 	}
 
-
 	public StatusBar getStatusBar() {
 		return this.statusBar;
 	}
@@ -143,7 +142,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 		if (this.configurationFilesFactory.isV3_XML()) {
 			
 			//POI default logger
-			System.setProperty("org.apache.poi.util.POILogger", "org.apache.poi.util.NullLogger" );
+			//System.setProperty("org.apache.poi.util.POILogger", "org.apache.poi.util.NullLogger" );
 
 			logger.info( " ==================>>> it is a V3 XML configuration !!! ");
 
@@ -199,7 +198,7 @@ public class MainGuiApp extends JPanel implements ChangeListener {
 			mestraChecksHelpTab.setBackground(Color.yellow);
 			traceabilityHelpTab.setOpaque(true);
 			
-			tabbedPane.addTab("<html><center>Traceability<br>Help</center></html>", createImageIcon("images/question-mark.png"), traceabilityHelpTab, "help");
+			tabbedPane.addTab("<html><center>Traceability<br>Help</center></html>", createImageIcon("/images/question-mark.png"), traceabilityHelpTab, "help");
 
 
 		} else {

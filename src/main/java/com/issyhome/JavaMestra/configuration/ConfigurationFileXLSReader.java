@@ -16,7 +16,6 @@ import org.apache.poi.ss.usermodel.CellType;
 
 import com.issyhome.JavaMestra.gui.StatusBar;
 import com.issyhome.JavaMestra.poi.ExcelFile;
-import com.issyhome.JavaMestra.tableView.TableViewRow.Row;
 
 public class ConfigurationFileXLSReader extends ExcelFile {
 
