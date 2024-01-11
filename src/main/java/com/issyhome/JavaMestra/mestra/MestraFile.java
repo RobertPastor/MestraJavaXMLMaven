@@ -268,14 +268,12 @@ public class MestraFile extends WordFile {
 
 		case MF:
 			logger.info( "MestraFile : converting markers of a MF");
-
 			mestraMFtags = new MestraMF_Collection();
 			mestraMFtags.init(configuration, this);
 			break;
 
 		case TS:
 			logger.info( "MestraFile : converting markers of a TS");
-
 			mestraTStags = new MestraTS_Collection();
 			mestraTStags.init(configuration, this);
 			break;
@@ -289,7 +287,7 @@ public class MestraFile extends WordFile {
 
 		// open the word file - docx since 4th August 2016
 		// call open method of base class Word file
-		XWPFDocument  docx = null;
+		XWPFDocument docx = null;
 		try {
 			docx = this.open(this.LongFileName);
 			assert (configuration != null);

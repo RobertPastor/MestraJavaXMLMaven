@@ -51,17 +51,20 @@ public class WordFile {
 
 	private void buildWordFileStylesMap(XWPFDocument document) {
 		this.wordFileStyles = new TreeMap<String, String>();
+		XWPFStyles xwpfStyles = document.getStyles();
 		try {
 
-			XWPFStyles xwpfStyles = document.getStyles();
-			Iterator<XWPFRun> runList = ((List<XWPFRun>) xwpfStyles).iterator();
-			
-			while (runList.hasNext()) {
-				XWPFRun xWPFRun = runList.next();
-				String styleId = xWPFRun.getStyle();
-				XWPFStyle xWPFStyle = xwpfStyles.getStyle(styleId);
+			List<XWPFParagraph> paragraphList = document.getParagraphs();
 
-				this.wordFileStyles.put(styleId , xWPFStyle.getName());
+			for (XWPFParagraph paragraph : paragraphList) {
+				String styleId = paragraph.getStyleID();
+
+				XWPFStyle xWPFStyle = xwpfStyles.getStyle(styleId);
+				if ( xWPFStyle != null ) {
+					logger.log(Level.INFO , "WordFile: style name: " + xWPFStyle.getName());
+					this.wordFileStyles.put(styleId , xWPFStyle.getName());
+				}
+
 			}
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, e.getLocalizedMessage());
@@ -85,25 +88,21 @@ public class WordFile {
 		}
 		catch (IOException e2) {
 			logger.log(Level.SEVERE ,  "WordFile: IOException raised: " + e2.getMessage());
-
 			return null;
 		}
 		catch (ArrayIndexOutOfBoundsException e3) {
 			logger.log(Level.SEVERE , "WordFile: ArrayIndexOutOfBoundsException raised: " + e3.getMessage());
-			
 		}
 		// 16 September 2008
 		catch (IllegalArgumentException e4) {
 			logger.log(Level.SEVERE , "WordFile: IllegalArgumentException raised: " + e4.getMessage());
-					
 		}
-			
 		return docx;
 	}
-	
-	
+
+
 	private void analyseParagraph(XWPFParagraph xwpfParagraph, MestraStylesMap mestraStyles) {
-		
+
 		if (xwpfParagraph.getStyleID() != null) {
 			//logger.info( "Style = " + xwpfParagraph.getStyle()+ " style id = " + xwpfParagraph.getStyleID() + " real style = " + this.wordFileStyles.get(xwpfParagraph.getStyleID()) );
 			//logger.info( " text " + xwpfParagraph.getText());
@@ -141,7 +140,7 @@ public class WordFile {
 				}
 			}
 		}
-		
+
 	}
 
 
@@ -156,35 +155,20 @@ public class WordFile {
 				statusBar.setProgressBarMaxValue( document.getParagraphs().size());
 			}
 			if (mestraStyles != null) {
+
 				int nbParagraph = 1;
-				
-				for (IBodyElement bodyElement : document.getBodyElements()) {
+
+				List<XWPFParagraph> paragraphs = document.getParagraphs();
+
+				for (XWPFParagraph xwpfParagraph : paragraphs) {
+					System.out.println(xwpfParagraph.getText());
 
 					if (statusBar != null) {
 						statusBar.setProgressBarValue(nbParagraph);
 						nbParagraph++;
-					}
-
-					if (bodyElement instanceof XWPFParagraph) { 
-						XWPFParagraph xwpfParagraph = (XWPFParagraph) bodyElement;
 						analyseParagraph(xwpfParagraph, mestraStyles);
-						
-					}  else if (bodyElement instanceof XWPFTable) {
-						XWPFTable xwpfTable = (XWPFTable) bodyElement;
-						for (XWPFTableRow xwpfTableRow : xwpfTable.getRows()) {
-							for (ICell xwpfTableCell : xwpfTableRow.getTableICells()) {
-								if (xwpfTableCell instanceof XWPFTableCell) {
-									for (XWPFParagraph xwpfParagraph : ((XWPFTableCell) xwpfTableCell).getParagraphs()) {
-										
-										analyseParagraph(xwpfParagraph, mestraStyles);
-
-									}
-								}
-							}
-						}
 					}
 				}
-				
 				statusBar.setProgressBarValue(0);
 				return true;
 			}
