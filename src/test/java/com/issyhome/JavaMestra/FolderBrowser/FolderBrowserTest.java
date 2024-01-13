@@ -12,7 +12,7 @@ public class FolderBrowserTest {
 	final static Logger logger = Logger.getLogger(FolderBrowser.class.getName()); 
 	
 	@Test
-    void justAnExample() {
+    void FolderBrowserTest001() {
  
 		String folderPath = "C:\\Users\\rober\\.m2\\repository";
 		FolderBrowser folderBrowser = new FolderBrowser(folderPath);

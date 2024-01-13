@@ -56,8 +56,6 @@ public class CustomTable extends JTable {
 		this.repaint();
 	}
 
-
-
 	private static void createAndShowGUI() {
 		//JPanel panel = new JPanel();
 

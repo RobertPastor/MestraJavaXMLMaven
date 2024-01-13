@@ -55,9 +55,18 @@ public class ExcelSheet {
 		} else {
 			this.SheetName = _sheetName;
 		}
-		sheet = wb.createSheet(SuppressForbiddenChar(this.SheetName));
+		this.SheetName = SuppressForbiddenChar(this.SheetName);
+		sheet = wb.createSheet(this.SheetName);
 		rowIndex = 0 ;
 		cellStyles = new CellStyles(wb);
+	}
+	
+	/**
+	 * return the adjusted sheet name to comply with Microsoft EXCEL Sheet names specifications
+	 * @return
+	 */
+	public String getSheetName() {
+		return this.SheetName;
 	}
 
 	/**
@@ -231,8 +240,7 @@ public class ExcelSheet {
 		// Sheet name cannot be blank, greater than 31 chars, or contain any of /\*?[]	
 		// 10 November 2008 : regression from a previous version
 		// underscore character is allowed
-		char[] toBeSuppressedChars = { '(' , '?' ,
-				',' , ';' , ')' , '"' , ':' , '/' , '-' , '[' , ']' , '*' , '\''};
+		char[] toBeSuppressedChars = { '(' , '?' , ',' , ';' , ')' , '"' , ':' , '/' , '-' , '[' , ']' , '*' , '\''};
 		int index = 0;
 		int len = outStr.length() ;
 		while (index < len) {

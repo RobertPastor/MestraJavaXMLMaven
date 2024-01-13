@@ -174,6 +174,9 @@ public class MestraToolVersion {
 	        new MestraChanges("Title content is duplicated.",
 	    	"V1.2.2 dated 8th January 2019"),
 	        
+	        new MestraChanges("new Maven version.",
+	    	"V2.0.0 dated 13th January 2024"),
+	        
 	        };
 	
 	

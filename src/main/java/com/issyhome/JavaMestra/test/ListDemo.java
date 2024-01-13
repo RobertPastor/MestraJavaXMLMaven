@@ -244,11 +244,16 @@ public class ListDemo extends JFrame implements ListSelectionListener
 
     public class FileSelection extends Vector<Object> implements Transferable
     {
-        final static int FILE = 0;
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = -6605279668124589751L;
+		final static int FILE = 0;
         final static int STRING = 1;
         final static int PLAIN = 2;
         DataFlavor flavors[] = {DataFlavor.javaFileListFlavor,
                 DataFlavor.stringFlavor,
+                // 13th January 2024 - deprecated
                 DataFlavor.plainTextFlavor};
 
         public FileSelection(File file)
