@@ -10,11 +10,15 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.poi.xwpf.usermodel.IBodyElement;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFStyle;
 import org.apache.poi.xwpf.usermodel.XWPFStyles;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.poi.xwpf.usermodel.XWPFTableCell;
+import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 
 import com.issyhome.JavaMestra.configuration.MestraStyle;
 import com.issyhome.JavaMestra.configuration.MestraStylesMap;
@@ -93,6 +97,23 @@ public class WordFile {
 		}
 		return docx;
 	}
+	
+	private void analyseTable(XWPFTable xwpfTable, MestraStylesMap mestraStyles) {
+		
+		int nbRows = xwpfTable.getNumberOfRows();
+		for ( int rowIndex = 0 ; rowIndex < nbRows ; rowIndex ++ ) {
+			XWPFTableRow xwpfTableRow = xwpfTable.getRow(rowIndex);
+			
+			List<XWPFTableCell> xwpfTableCells = xwpfTableRow.getTableCells();
+			for ( XWPFTableCell xwpfTableCell : xwpfTableCells ) {
+				
+				List<XWPFParagraph> xwpfParagraphs = xwpfTableCell.getParagraphs();
+				for ( XWPFParagraph xwpfParagraph : xwpfParagraphs) {
+					analyseParagraph ( xwpfParagraph , mestraStyles);
+				}
+			}
+		}
+	}
 
 
 	private void analyseParagraph(XWPFParagraph xwpfParagraph, MestraStylesMap mestraStyles) {
@@ -134,7 +155,6 @@ public class WordFile {
 				}
 			}
 		}
-
 	}
 
 
@@ -152,21 +172,32 @@ public class WordFile {
 
 				int nbParagraph = 1;
 
-				List<XWPFParagraph> paragraphs = document.getParagraphs();
+				//List<XWPFParagraph> paragraphs = document.getParagraphs();
+				List<IBodyElement> bodyElements = document.getBodyElements();
 
-				for (XWPFParagraph xwpfParagraph : paragraphs) {
-					System.out.println(xwpfParagraph.getText());
+				for (IBodyElement bodyElement : bodyElements) {
+					
+					 if (bodyElement instanceof XWPFParagraph) {
+						 XWPFParagraph xwpfParagraph = (XWPFParagraph)bodyElement;
+						 logger.info(xwpfParagraph.getText());
+						 analyseParagraph(xwpfParagraph, mestraStyles);
+						 
+					 } else if (bodyElement instanceof XWPFTable) {
+						 
+						 XWPFTable xwpfTable = (XWPFTable)bodyElement;
+						 logger.info(xwpfTable.getText());
+						 analyseTable(xwpfTable, mestraStyles);
+					 }
 
 					if (statusBar != null) {
 						statusBar.setProgressBarValue(nbParagraph);
 						nbParagraph++;
-						analyseParagraph(xwpfParagraph, mestraStyles);
+						
 					}
 				}
 				statusBar.setProgressBarValue(0);
 				return true;
 			}
-
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, e.getLocalizedMessage());
 		}
