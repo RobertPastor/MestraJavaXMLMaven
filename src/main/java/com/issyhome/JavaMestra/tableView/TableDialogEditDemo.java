@@ -46,7 +46,11 @@ public class TableDialogEditDemo extends JPanel {
     }
 
     class MyTableModel extends AbstractTableModel {
-        private String[] columnNames = {"First Name",
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = -2956696401513626220L;
+		private String[] columnNames = {"First Name",
                                         "Favorite Color",
                                         "Sport",
                                         "# of Years",

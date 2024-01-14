@@ -19,6 +19,32 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  
+  <repositories>
+        <!-- define the alfresco maven repository -->
+        <repository>
+            <id>Maven Central Repository</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        
+        <repository>
+            <id>Alfresco Maven Repository</id>
+            <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+        </repository>
+        
+        <repository>
+		    <id>jabylon</id>
+		    <name>Jabylon Maven Repository</name>
+		    <url>https://www.jabylon.org/maven</url>
+		</repository>
+		
+		<repository>
+		    <id>irisa</id>
+		    <name>IRISA Maven Repository</name>
+		    <url>https://maven.irisa.fr/artifactory/list/kermeta-public-release/</url>
+		</repository>
+        
+  </repositories>
 
   <dependencies>
 	  
@@ -80,13 +106,6 @@
 	    <artifactId>xmlbeans</artifactId>
 	    <version>5.2.0</version>
 	</dependency>
-
-	<!-- https://mvnrepository.com/artifact/xalan/xalan -->
-	<dependency>
-	    <groupId>xalan</groupId>
-	    <artifactId>xalan</artifactId>
-	    <version>2.7.3</version>
-	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/com.zaxxer/SparseBitSet -->
 	<dependency>
@@ -136,10 +155,13 @@
 	    <artifactId>log4j-core</artifactId>
 	    <version>2.22.1</version>
 	</dependency>
-	
-	
 
-
+	<!-- https://mvnrepository.com/artifact/xalan/xalan -->
+	<dependency>
+	    <groupId>xalan</groupId>
+	    <artifactId>xalan</artifactId>
+	    <version>2.7.2</version>
+	</dependency>
 
   </dependencies>
 
@@ -188,6 +210,7 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        
         
         <plugin>
 	      <artifactId>maven-assembly-plugin</artifactId>

@@ -1,18 +1,13 @@
 package com.issyhome.JavaMestra.poi;
 
+import java.util.logging.Logger;
+
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.junit.jupiter.api.Test;
 
-import com.issyhome.JavaMestra.FolderBrowser.FolderBrowser;
-
-import static org.junit.Assert.assertEquals;
-
-import java.io.File;
-import java.util.logging.Logger;
-
 public class ExcelSheetTest {
 	
-	final static Logger logger = Logger.getLogger(FolderBrowser.class.getName()); 
+	final static Logger logger = Logger.getLogger(ExcelSheetTest.class.getName()); 
 
 	
 	@Test

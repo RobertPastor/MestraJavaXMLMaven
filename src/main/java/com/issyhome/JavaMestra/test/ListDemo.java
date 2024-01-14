@@ -158,8 +158,7 @@ public class ListDemo extends JFrame implements ListSelectionListener
                 {
                     dropTargetDropEvent.acceptDrop (
                             DnDConstants.ACTION_COPY_OR_MOVE);
-                    java.util.List<Object> fileList = (java.util.List)
-                    tr.getTransferData(DataFlavor.javaFileListFlavor);
+                    java.util.List<Object> fileList = (java.util.List) tr.getTransferData(DataFlavor.javaFileListFlavor);
                     Iterator<Object> iterator = fileList.iterator();
                     while (iterator.hasNext())
                     {
