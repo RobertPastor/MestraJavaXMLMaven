@@ -17,3 +17,10 @@ buildNumber.properties
 .classpath
 
 src/main/resources/files/*.xls
+
+*.docx
+*.xls
+CreateWordStyles.docx
+CreateWordStyles.docx
+Java Mestra Tool_CreateWordStyles._14_janv._2024_21_07_26.xls
+CreateWordStyles.docx

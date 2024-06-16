@@ -62,7 +62,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 //import com.sun.org.apache.xpath.internal.XPathAPI;
-import org.apache.xpath.CachedXPathAPI;
+//import org.apache.xpath.CachedXPathAPI;
 
 /**
  * The table view main class
@@ -186,6 +186,7 @@ public class TableView extends JTable {
      * Load the settings from the XML file name
      * @param pFileName the XML file name
      */
+    /**
     public void loadSettings(String pFileName) {
         mFileName = pFileName;
         TableViewAdapter adapter = (TableViewAdapter) getModel();
@@ -268,6 +269,7 @@ public class TableView extends JTable {
             logger.log(Level.SEVERE , "File not found :" + mFileName);
         }
     }
+    */
 
     /**
      * Write to an XML file 

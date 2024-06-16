@@ -1,0 +1,1 @@
+java -cp target/JavaMestra-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.issyhome.JavaMestra.Main.MainMain

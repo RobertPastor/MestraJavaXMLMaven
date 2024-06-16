@@ -84,22 +84,22 @@ public class TextAreaWithBackGroundImage extends JTextArea {
 		String resource = "SSS.png";
 		switch (selectedFileType) {
 		case "SSS":
-			resource = "SSS.png";
+			resource = "/images/SSS.png";
 			break;
 		case "SRS":
-			resource = "SRS.png";
+			resource = "/images/SRS.png";
 			break;
 		case "TS":
-			resource = "TS.png";
+			resource = "/images/TS.png";
 			break;
 		case "SDD":
-			resource = "SDD.png";
+			resource = "/images/SDD.png";
 			break;
 		case "MF":
-			resource = "MF.png";
+			resource = "/images/MF.png";
 			break;
 		default:
-			resource = "SSS.png";
+			resource = "/images/SSS.png";
 			break;
 		}
 		try {

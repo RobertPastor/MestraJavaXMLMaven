@@ -43,15 +43,23 @@ public class CreateLargeSSSTest {
 		try {
 			XWPFDocument document = new XWPFDocument();
 			XWPFStyles styles = document.createStyles();
-			XWPFStyle xwpfStyle = createNamedStyle(styles, STStyleType.PARAGRAPH, "M:T:PUID:reqt");
+			XWPFStyle xwpfStyleRequirement = createNamedStyle(styles, STStyleType.PARAGRAPH, "M:T:PUID:reqt");
+			XWPFStyle xwpfStyleChanges = createNamedStyle(styles, STStyleType.PARAGRAPH, "M:T:AT:categ");
 			
 			for (int i = 0 ; i < 2000 ; i++ ) {
 				
 				XWPFParagraph paragraph = document.createParagraph();
-				paragraph.setStyle(xwpfStyle.getStyleId());
+				paragraph.setStyle(xwpfStyleRequirement.getStyleId());
 				
 				XWPFRun run = paragraph.createRun();
 				run.setText("SSS_REQ_" + String.format("%05d", i));
+				run.setFontSize(12);
+				
+				paragraph = document.createParagraph();
+				paragraph.setStyle(xwpfStyleChanges.getStyleId());
+				
+				run = paragraph.createRun();
+				run.setText("SSS_CHANGES_" + String.format("%05d", i));
 				run.setFontSize(12);
 				
 			}
